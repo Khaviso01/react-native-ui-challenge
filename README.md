@@ -1,56 +1,58 @@
-# Welcome to your Expo app 👋
+# Charity Chats – React Native UI
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Pixel-faithful React Native (Expo) implementation of the **"Charity App" chat screen** by Bogdan Nikitin for Nixtio (Dribbble). Built for Curriculum Task 1 (React Native Lesson 2: layout, styling, responsiveness).
 
-## Get started
+**Download the build (APK):** `<ADD YOUR GOOGLE DRIVE LINK HERE>`
 
-1. Install dependencies
+## Features
+- Header with back button, title and profile button with lime notification badge
+- Horizontally scrollable quick-contacts row with online indicators
+- "Recent Chat" list: typing state, voice-message state, unread badges, timestamps
+- "Group Chat" card with composite group avatar and `+6` counter
+- Press / hover feedback on every button, chip and chat row
+- Responsive: sizes scale from the 400pt design width via `useScale()`, content is capped at 480pt and centred on tablets / web
 
-   ```bash
-   npm install
-   ```
+## Tech
+Expo SDK 51 · React Native 0.74 · **TypeScript (strict)** · `expo-linear-gradient` · `@expo/vector-icons` · Outfit font (`@expo-google-fonts/outfit`, closest match to the design's Google Sans) · avatars from DiceBear (emoji fallback if offline)
 
-2. Start the app
+## Project structure
+```
+App.tsx                 entry, loads fonts
+src/theme/              colours, fonts, design constants
+src/types/              shared TS types (Contact, RecentChat, GroupChat, PressState)
+src/hooks/useScale.ts   responsive scaling helper
+src/data/chats.ts       typed mock data
+src/components/         Avatar, Badge, Card, IconButton, Header,
+                        ContactChip, ContactsRow, SectionLabel,
+                        ChatItem, GroupAvatar   (all reusable)
+src/screens/ChatsScreen.tsx
+```
+Run `npm run typecheck` to verify types.
 
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **src/app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+## Run it
+**Prerequisites:** [Node.js 18+](https://nodejs.org), Git, and the **Expo Go** app on your phone (or an Android emulator / iOS simulator).
 
 ```bash
-npm run reset-project
+git clone <YOUR_REPO_URL>
+cd charity-chat-app
+npm install
+npx expo start
 ```
+- **Phone:** scan the QR code with Expo Go (same Wi-Fi network).
+- **Android emulator:** press `a` · **iOS simulator (macOS):** press `i`
+- **Browser:** press `w` (or `npm run web`)
 
-This command will move the starter code to the **example** directory and create a blank **src/app** directory where you can start developing.
+## Build the APK
+```bash
+npm install -g eas-cli
+eas login
+eas build -p android --profile preview
+```
+Download the `.apk` from the link EAS prints, upload it to Google Drive, set sharing to "Anyone with the link", and paste the link at the top of this README.
 
-### Other setup steps
+## Notes
+- Avatars are stand-ins for the 3D illustrations in the design; replace `image` URLs in `src/data/chats.js` with local assets to match exactly.
+- If Expo Go warns about version mismatch, run `npx expo install --fix`.
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Troubleshooting
+- **EAS build fails with `splashscreen_background not found`:** make sure `expo-splash-screen` is installed (`npx expo install expo-splash-screen`) and `app.json` has the `splash.backgroundColor` entry (already included).
