@@ -10,3 +10,40 @@ interface ContactChipProps {
   contact: Contact;
   onPress?: (contact: Contact) => void;
 }
+
+export default function ContactChip({ contact, onPress }: ContactChipProps) {
+    // initialize responsive scaling utility look
+  const s = useScale();
+  return (
+    <Pressable
+      onPress={() => onPress?.(contact)}
+      accessibilityRole="button"
+      accessibilityLabel={`Open chat with ${contact.name}`}
+      style={({ pressed, hovered }: PressState) => [
+        styles.chip,
+        {
+          width: s(84),
+          height: s(96),
+          borderRadius: s(28),
+          marginRight: s(8),
+          backgroundColor: pressed || hovered ? colors.chipBgPressed : colors.chipBg,
+        },
+      ]}
+    >
+      <Avatar
+        uri={contact.image}
+        fallback={contact.fallback}
+        size={40}
+        bg="transparent"
+        online={contact.online}
+      />
+      <Text style={[styles.name, { fontSize: s(15), marginTop: s(10) }]}>{contact.name}</Text>
+    </Pressable>
+  );
+}
+
+const styles = StyleSheet.create({
+  chip: { alignItems: 'center', justifyContent: 'center' },
+  name: { fontFamily: fonts.medium, color: colors.ink },
+});
+
