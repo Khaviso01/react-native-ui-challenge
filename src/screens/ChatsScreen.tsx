@@ -1,0 +1,13 @@
+import React from 'react';
+import { Alert, Platform, ScrollView, StyleSheet, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import Card from '../components/Card';
+import Header from '../components/Header';
+import ContactsRow from '../components/ContactsRow';
+import SectionLabel from '../components/SectionLabel';
+import ChatItem from '../components/ChatItem';
+import Avatar from '../components/Avatar';
+import GroupAvatar from '../components/GroupAvatar';
+import useScale from '../hooks/useScale';
+import { colors, MAX_CONTENT_WIDTH } from '../theme';
+import { contacts, groupChats, recentChats } from '../data/chats';
