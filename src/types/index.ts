@@ -1,0 +1,36 @@
+import type { PressableStateCallbackType } from 'react-native';
+
+export type PressState = PressableStateCallbackType & { hovered?: boolean };
+
+export type AvatarColor = 'purple' | 'yellow' | 'green' | 'pink';
+
+export interface Contact {
+  id: string;
+  name: string;
+  online: boolean;
+  image: string;
+  fallback: string;
+}
+
+export interface RecentChat {
+  id: string;
+  name: string;
+  preview: string;
+  time: string;
+  unread?: number;
+  online?: boolean;
+  voice?: boolean;
+  bg: AvatarColor;
+  image: string;
+  fallback: string;
+}
+
+export interface GroupChat {
+  id: string;
+  name: string;
+  preview: string;
+  time: string;
+  unread?: number;
+  extra: number;
+  members: [string, string, string, string];
+}

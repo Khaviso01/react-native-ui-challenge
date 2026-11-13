@@ -5,22 +5,18 @@ import useScale from '../hooks/useScale';
 import { colors, fonts } from '../theme';
 import type { GroupChat } from '../types';
 
-// Props definition for the GroupAvatar component managing member avatars and overflow count
 interface GroupAvatarProps {
   members: GroupChat['members'];
   extra: number;
   size?: number;
 }
 
-// 
 export default function GroupAvatar({ members, extra, size = 80 }: GroupAvatarProps) {
   const s = useScale();
-  // Calculate scaling multiplier based on target size relative to base design
-  const k = size / 80;
-  // member avatars URIs
+  const k = size / 80; // positions below are authored for an 80pt square
+  const px = s(size);
   const [topLeft, topRight, bottomLeft, centre] = members;
 
-  // helper to calculate absolute positioning scaled by factor k
   const place = (left: number, top: number) => ({
     position: 'absolute' as const,
     left: s(left * k),
@@ -50,6 +46,13 @@ export default function GroupAvatar({ members, extra, size = 80 }: GroupAvatarPr
 }
 
 const styles = StyleSheet.create({
-  square: { ...StyleSheet.absoluteFillObject, backgroundColor: colors.groupBg },
+  square: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: colors.groupBg,
+  },
   extra: { position: 'absolute', fontFamily: fonts.semibold, color: colors.ink },
 });

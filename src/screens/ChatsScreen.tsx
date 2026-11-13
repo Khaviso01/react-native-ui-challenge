@@ -12,13 +12,11 @@ import useScale from '../hooks/useScale';
 import { colors, MAX_CONTENT_WIDTH } from '../theme';
 import { contacts, groupChats, recentChats } from '../data/chats';
 
-// Helper function to trigger cross-platform alerts
 const notify = (message: string): void => {
   if (Platform.OS === 'web') window.alert(message);
   else Alert.alert('Chats', message);
 };
 
-// notification count 
 const NOTIFICATIONS = 6;
 
 export default function ChatsScreen() {
@@ -100,3 +98,4 @@ export default function ChatsScreen() {
 
 const styles = StyleSheet.create({
   page: { flex: 1, backgroundColor: colors.background },
+});

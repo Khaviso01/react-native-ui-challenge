@@ -6,7 +6,6 @@ import useScale from '../hooks/useScale';
 import { colors, fonts } from '../theme';
 import type { PressState } from '../types';
 
-// Props definition for the ChatItem row component
 interface ChatItemProps {
   leading: ReactNode;
   name: string;
@@ -17,7 +16,6 @@ interface ChatItemProps {
   onPress?: () => void;
 }
 
-//ChatItem to represent and individual message list
 export default function ChatItem({ leading, name, preview, time, unread, voice, onPress }: ChatItemProps) {
   const s = useScale();
   return (
@@ -72,3 +70,14 @@ export default function ChatItem({ leading, name, preview, time, unread, voice, 
     </Pressable>
   );
 }
+
+const styles = StyleSheet.create({
+  row: { flexDirection: 'row', alignItems: 'center' },
+  body: { flex: 1, justifyContent: 'center' },
+  line: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
+  name: { flex: 1, fontFamily: fonts.semibold, color: colors.ink },
+  time: { fontFamily: fonts.regular, color: colors.muted },
+  previewWrap: { flex: 1, flexDirection: 'row', alignItems: 'center' },
+  preview: { fontFamily: fonts.regular, color: colors.muted, flexShrink: 1 },
+  voice: { fontFamily: fonts.medium, color: colors.ink },
+});
