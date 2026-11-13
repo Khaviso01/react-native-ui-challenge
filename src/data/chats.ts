@@ -69,6 +69,6 @@ export const groupChats: GroupChat[] = [
     time: '12:32',
     unread: 6,
     extra: 6,
-    members: [avatars.kevin, avatars.leo, avatars.kate, avatars.mira],
+    members: [avatars.mira, avatars.leo, avatars.kate, avatars.kevin],
   },
 ];
