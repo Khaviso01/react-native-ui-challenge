@@ -1,4 +1,4 @@
-import type { PressableStateCallbackType } from 'react-native';
+import type { ImageSourcePropType, PressableStateCallbackType } from 'react-native';
 
 export type PressState = PressableStateCallbackType & { hovered?: boolean };
 
@@ -8,7 +8,7 @@ export interface Contact {
   id: string;
   name: string;
   online: boolean;
-  image: string;
+  image: ImageSourcePropType;
   fallback: string;
 }
 
@@ -21,7 +21,7 @@ export interface RecentChat {
   online?: boolean;
   voice?: boolean;
   bg: AvatarColor;
-  image: string;
+  image: ImageSourcePropType;
   fallback: string;
 }
 
@@ -32,5 +32,5 @@ export interface GroupChat {
   time: string;
   unread?: number;
   extra: number;
-  members: [string, string, string, string];
+  members: [ImageSourcePropType, ImageSourcePropType, ImageSourcePropType, ImageSourcePropType];
 }

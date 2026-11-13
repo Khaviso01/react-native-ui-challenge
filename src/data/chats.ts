@@ -1,7 +1,16 @@
 import type { Contact, GroupChat, RecentChat } from '../types';
 
-const avatar = (seed: string): string =>
-  `https://api.dicebear.com/7.x/avataaars/png?seed=${encodeURIComponent(seed)}&size=200`;
+const avatars = {
+  mira: require('../../assets/mira.png'),
+  phill: require('../../assets/phill.png'),
+  mike: require('../../assets/mike.png'),
+  kierra: require('../../assets/kierra.png'),
+  stacey: require('../../assets/stacey.png'),
+  kate: require('../../assets/kate.png'),
+  ann: require('../../assets/ann.png'),
+  kevin: require('../../assets/kevin.png'),
+  leo: require('../../assets/leo.png'),
+};
 
 export const contacts: Contact[] = [
   { id: 'c1', name: 'Mira', online: true, image: avatar('Mira'), fallback: '👩' },
