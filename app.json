@@ -5,11 +5,32 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
-    "platforms": ["ios", "android", "web"],
-    "splash": { "backgroundColor": "#EEF1EE", "resizeMode": "contain" },
-    "android": { "package": "com.ntivo.charitychats" },
-    "ios": { "bundleIdentifier": "com.ntivo.charitychats" },
-    "web": { "bundler": "metro" },
-    "plugins": ["expo-font"]
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "splash": {
+      "backgroundColor": "#EEF1EE",
+      "resizeMode": "contain"
+    },
+    "android": {
+      "package": "com.ntivo.charitychats"
+    },
+    "ios": {
+      "bundleIdentifier": "com.ntivo.charitychats"
+    },
+    "web": {
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-font"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "ff893c08-cd9a-4720-8352-0e81a64e0bf4"
+      }
+    },
+    "owner": "khavisoo"
   }
 }
