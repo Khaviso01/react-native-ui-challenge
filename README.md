@@ -2,7 +2,7 @@
 
 Pixel-faithful React Native (Expo) implementation of the **"Charity App" chat screen** by Bogdan Nikitin for Nixtio (Dribbble). Built for Curriculum Task 1 (React Native Lesson 2: layout, styling, responsiveness).
 
-**Download the build (APK):** `<ADD YOUR GOOGLE DRIVE LINK HERE>`
+**Download the build (APK):** `https://drive.google.com/drive/folders/1sMTXXl4au0aMEOiQdbNjMCPQ_CCWA-DB?usp=sharing`
 
 ## Features
 - Header with back button, title and profile button with lime notification badge
