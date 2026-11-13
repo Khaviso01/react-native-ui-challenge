@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, ImageSourcePropType, StyleSheet, Text, View } from 'react-native';
 import useScale from '../hooks/useScale';
 import { colors } from '../theme';
 
 interface AvatarProps {
-  uri?: string;
+  source?: ImageSourcePropType;
   fallback?: string;
   size?: number;
   bg?: string;
   online?: boolean;
 }
 
+/** Round avatar with optional coloured backdrop and online dot (sits on the circle's 45° edge). */
 export default function Avatar({
-  uri,
+  source,
   fallback = '🙂',
   size = 52,
   bg = colors.chipBg,
@@ -32,11 +33,11 @@ export default function Avatar({
           { width: px, height: px, borderRadius: px / 2, backgroundColor: bg },
         ]}
       >
-        {failed || !uri ? (
+        {failed || !source ? (
           <Text style={{ fontSize: px * 0.5 }}>{fallback}</Text>
         ) : (
           <Image
-            source={{ uri }}
+            source={source}
             style={{ width: px * 0.92, height: px * 0.92, marginTop: px * 0.06 }}
             onError={() => setFailed(true)}
             resizeMode="contain"

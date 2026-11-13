@@ -2,21 +2,20 @@ import type { Contact, GroupChat, RecentChat } from '../types';
 
 const avatars = {
   mira: require('../../assets/mira.png'),
-  phill: require('../../assets/phill.png'),
+  phill: require('../../assets/phillip.png'),
   mike: require('../../assets/mike.png'),
   kierra: require('../../assets/kierra.png'),
   stacey: require('../../assets/stacey.png'),
   kate: require('../../assets/kate.png'),
-  ann: require('../../assets/ann.png'),
   kevin: require('../../assets/kevin.png'),
-  leo: require('../../assets/leo.png'),
+  leo: require('../../assets/leo.png')
 };
 
 export const contacts: Contact[] = [
-  { id: 'c1', name: 'Mira', online: true, image: avatar('Mira'), fallback: '👩' },
-  { id: 'c2', name: 'Phill', online: true, image: avatar('Phill'), fallback: '🧑' },
-  { id: 'c3', name: 'Mike', online: false, image: avatar('Mike'), fallback: '👨' },
-  { id: 'c4', name: 'Kierra', online: false, image: avatar('Kierra'), fallback: '👱‍♀️' },
+  { id: 'c1', name: 'Mira', online: true, image: avatars.mira, fallback: '👩' },
+  { id: 'c2', name: 'Phill', online: true, image: avatars.phill, fallback: '🧑' },
+  { id: 'c3', name: 'Mike', online: false, image: avatars.mike, fallback: '👨' },
+  { id: 'c4', name: 'Kierra', online: false, image: avatars.kierra, fallback: '👱‍♀️' },
 ];
 
 export const recentChats: RecentChat[] = [
@@ -28,7 +27,7 @@ export const recentChats: RecentChat[] = [
     unread: 6,
     online: true,
     bg: 'purple',
-    image: avatar('Phillip'),
+    image: avatars.phill,
     fallback: '🧑‍🎨',
   },
   {
@@ -39,7 +38,7 @@ export const recentChats: RecentChat[] = [
     time: '11:05',
     unread: 2,
     bg: 'yellow',
-    image: avatar('Kierra'),
+    image: avatars.kierra,
     fallback: '👱‍♀️',
   },
   {
@@ -48,7 +47,7 @@ export const recentChats: RecentChat[] = [
     preview: 'Yes, put my name down in that list of the donations.',
     time: '10:31',
     bg: 'green',
-    image: avatar('Mike'),
+    image: avatars.mike,
     fallback: '👨',
   },
   {
@@ -57,7 +56,7 @@ export const recentChats: RecentChat[] = [
     preview: 'Hi! Her mom already used it',
     time: '08:12',
     bg: 'pink',
-    image: avatar('Stacey'),
+    image: avatars.stacey,
     fallback: '👩‍🦰',
   },
 ];
@@ -70,6 +69,6 @@ export const groupChats: GroupChat[] = [
     time: '12:32',
     unread: 6,
     extra: 6,
-    members: [avatar('Kate'), avatar('Ann'), avatar('Kevin'), avatar('Leo')],
+    members: [avatars.kevin, avatars.leo, avatars.kate, avatars.mira],
   },
 ];

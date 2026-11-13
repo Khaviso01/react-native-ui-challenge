@@ -62,7 +62,7 @@ export default function ChatsScreen() {
                 onPress={() => notify(`Open ${c.name}`)}
                 leading={
                   <Avatar
-                    uri={c.image}
+                    source={c.image}
                     fallback={c.fallback}
                     size={80}
                     bg={colors.avatar[c.bg]}

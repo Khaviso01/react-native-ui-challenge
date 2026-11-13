@@ -5,14 +5,13 @@ import useScale from '../hooks/useScale';
 import { colors, fonts } from '../theme';
 import type { Contact, PressState } from '../types';
 
-// Props definition for ContactChips
 interface ContactChipProps {
   contact: Contact;
   onPress?: (contact: Contact) => void;
 }
 
+/** Rounded tile used in the horizontal "quick contacts" row. */
 export default function ContactChip({ contact, onPress }: ContactChipProps) {
-    // initialize responsive scaling utility look
   const s = useScale();
   return (
     <Pressable
@@ -31,7 +30,7 @@ export default function ContactChip({ contact, onPress }: ContactChipProps) {
       ]}
     >
       <Avatar
-        uri={contact.image}
+        source={contact.image}
         fallback={contact.fallback}
         size={40}
         bg="transparent"
@@ -46,4 +45,3 @@ const styles = StyleSheet.create({
   chip: { alignItems: 'center', justifyContent: 'center' },
   name: { fontFamily: fonts.medium, color: colors.ink },
 });
-
