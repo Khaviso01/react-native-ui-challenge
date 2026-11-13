@@ -57,7 +57,7 @@ export default function ChatItem({ leading, name, preview, time, unread, voice, 
               numberOfLines={2}
               style={[
                 styles.preview,
-                { fontSize: s(14.5), lineHeight: s(20), maxWidth: s(228) },
+                { fontSize: s(14.5), lineHeight: s(20), maxWidth: s.isWide ? undefined : s(228) },
                 voice && styles.voice,
               ]}
             >

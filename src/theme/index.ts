@@ -35,4 +35,5 @@ export const fonts = {
 
 // Design artboard with width reference and maximum content
 export const DESIGN_WIDTH = 400;
-export const MAX_CONTENT_WIDTH = 480;
+export const MAX_SCALE_WIDTH = 600;
+export const MAX_CONTENT_WIDTH = 1200;
