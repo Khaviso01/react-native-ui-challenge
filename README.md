@@ -6,11 +6,11 @@ A mobile product interface recreated with Pixel-faithful React Native (Expo), im
 
 ## Inspo
 
-[Charity App Inspo](assets/charity-app-inspo.png)
+<img src="assets/charity-app-inspo.png" width="300">
 
 ## Implementation
 
-[Charity App](assets/charity-app-ui-implementation.png)
+<img src="assets/charity-app-ui-implementation.png" width="300">
 
 ## Features
 - Header with back button, title and profile button with lime notification badge
