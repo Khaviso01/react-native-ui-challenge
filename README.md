@@ -38,7 +38,7 @@ src/screens/ChatsScreen.tsx
 Run `npm run typecheck` to verify types.
 
 ## Run it
-**Prerequisites:** [Node.js 18+](https://nodejs.org), Git, and the **Expo Go** app on your phone (or an Android emulator / iOS simulator).
+**Prerequisites:** [Node.js 18+](https://nodejs.org), Git, and the **Expo Go** app on your phone (or an Android emulator / iOS simulator)
 
 ```bash
 git clone <YOUR_REPO_URL>
@@ -46,6 +46,12 @@ cd charity-chat-app
 npm install
 npx expo start
 ```
+If the local network fails, run:
+
+```bash
+npx expo start --tunnel
+```
+
 - **Phone:** scan the QR code with Expo Go (same Wi-Fi network).
 - **Android emulator:** press `a` · **iOS simulator (macOS):** press `i`
 - **Browser:** press `w` (or `npm run web`)
@@ -61,6 +67,12 @@ Download the `.apk` from the link EAS prints, upload it to Google Drive, set sha
 ## Notes
 - Avatars are stand-ins for the 3D illustrations in the design; replace `image` URLs in `src/data/chats.js` with local assets to match exactly.
 - If Expo Go warns about version mismatch, run `npx expo install --fix`.
+
+## To be improved
+
+- Improve active icons on charts sections
+- Add round background behind +6 counter
+- 
 
 ## Troubleshooting
 - **EAS build fails with `splashscreen_background not found`:** make sure `expo-splash-screen` is installed (`npx expo install expo-splash-screen`) and `app.json` has the `splash.backgroundColor` entry (already included).
