@@ -1,9 +1,16 @@
 # Charity Chats – React Native UI
 
-Pixel-faithful React Native (Expo) implementation of the **"Charity App" chat screen** by Bogdan Nikitin for Nixtio (Dribbble). Built for Curriculum Task 1 (React Native Lesson 2: layout, styling, responsiveness).
+A mobile product interface recreated with Pixel-faithful React Native (Expo), implementation of the **"Charity App" chat screen**. Built for Curriculum Task 1 (React Native Lesson 2: layout, styling, responsiveness).
 
 [Download the build (APK)](https://drive.google.com/drive/folders/1sMTXXl4au0aMEOiQdbNjMCPQ_CCWA-DB?usp=sharing)
 
+## Inspo
+
+[Charity App Inspo](assets/charity-app-inspo.png)
+
+## Implementation
+
+[Charity App](assets/charity-app-ui-implementation.png)
 
 ## Features
 - Header with back button, title and profile button with lime notification badge
